@@ -23,15 +23,15 @@ function App() {
 
         <div>
           <div className="row center">
-
+  
             {
               data.products.map((products) => (
-              <div className="card">
-              <a href="products.html">
-                <img className="medium" src=".\images\coffee.jpg" alt="product" />
+              <div key={products._id} className="card">
+              <a href={`/products/${products._id}`}>
+                <img className="medium" src={products.image} alt={products.name} />
               </a>
               <div className="card-body">
-                <a href="products.html">
+                <a href={`/products/${products._id}`}>
                   <h2>{products.name}</h2>
                 </a>
                 <div className="rating">
@@ -41,7 +41,7 @@ function App() {
                   <span> <i className="fa fa-star"></i> </span>
                   <span> <i className="fa fa-star"></i> </span>
                 </div>
-                <div className="price">$120</div>
+                <div className="price">${products.price}</div>
               </div>
             </div>
               ))  //convert products from data.js to HTML

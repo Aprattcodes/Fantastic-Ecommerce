@@ -83,6 +83,12 @@ img.medium {
   width: 100%;
 }
 
+.large{
+  width: 500px;
+  height: auto;
+}
+
+
 /* Card */
 .card {
   border: 0.1rem #c0c0c0 solid;

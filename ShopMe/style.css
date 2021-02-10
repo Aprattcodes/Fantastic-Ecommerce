@@ -76,6 +76,11 @@ html {
     max-width: 29rem;
     width: 100%;
   }
+
+  .large{
+    width: 500px;
+    height: auto;
+  }
   
   /* Card */
   .card {

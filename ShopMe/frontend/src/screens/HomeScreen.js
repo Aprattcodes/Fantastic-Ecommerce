@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Product from '../components/Product'; //two dots back two folders
-import data from "../data";
+
 
 export default function HomeScreen() {
+  const [products, setProducts] = useState([]); //uses react hook to manage react component (below)
+  useEffect(() =>{
+    const fetchData = async () => {
+      const {data} = await axios.get('/api/products');
+      setProducts(data);
+    };
+    fetchData();
+  }, [])
     return (
         <div>
         <div className="row center">
 
           {
-            data.products.map((products) => (
-            <Product key={products._id} products={products}></Product> //extract a component
+            products.map((products) => (
+            <Product key={products._id} products={products}></Product> //extracts a component
               )
-            )  //convert products from data.js to HTML, better format because it's modular and component based
+            )
           }
 
         </div> 

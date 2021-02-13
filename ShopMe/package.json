@@ -5,7 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js",
+    "build": "react-scripts build",
+    "build-localhost": "https://akpshopme.netlify.app=/ react-scripts build"
   },
   "author": "Alyssa Pratt",
   "license": "ISC",
